@@ -1,6 +1,7 @@
 package ru.leonid.userservice.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,9 @@ import ru.leonid.userservice.Model.UserRepository;
 @RestController
 @RequestMapping("/registration")
 public class Registration {
+
+    @Value("${eureka.instance.instance-id}")
+    private String instanceAplication;
 
     @Autowired
     UserRepository userRepository;
@@ -29,7 +33,7 @@ public class Registration {
 
     @GetMapping("/test")
     public String testController(){
-        return "request from #userservice#";
+        return "request from #userservice#: " + instanceAplication;
     }
 
 }

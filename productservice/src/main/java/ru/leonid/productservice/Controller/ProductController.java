@@ -1,6 +1,7 @@
 package ru.leonid.productservice.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,12 +13,14 @@ import ru.leonid.productservice.Model.ProductRepository;
 @RequestMapping("/product")
 public class ProductController {
 
+    @Value("${eureka.instance.instance-id}")
+    private String instanceAplication;
     @Autowired
     ProductRepository productRepository;
 
     @GetMapping("test")
     public String testController(){
-        return "test controller productService";
+        return "test controller #productService#: "+ instanceAplication;
     }
 
     @GetMapping("/add")
