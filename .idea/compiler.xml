@@ -9,19 +9,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="apiGateway" />
         <module name="eureca-server" />
+        <module name="Orderservice" />
         <module name="userservice" />
         <module name="productservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Accountservice" target="17" />
       <module name="apiGateway" target="17" />
       <module name="eureca-server" target="17" />
+      <module name="Orderservice" target="17" />
       <module name="productservice" target="17" />
       <module name="userservice" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Accountservice" options="-parameters" />
+      <module name="Orderservice" options="-parameters" />
       <module name="apiGateway" options="-parameters" />
       <module name="eureca-server" options="-parameters" />
       <module name="productservice" options="-parameters" />
