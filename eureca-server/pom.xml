@@ -11,6 +11,7 @@
 	<groupId>ru.leonid</groupId>
 	<artifactId>eureca-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>eureca-server</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>

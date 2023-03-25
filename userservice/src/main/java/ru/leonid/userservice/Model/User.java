@@ -22,4 +22,12 @@ public class User {
     private String password;
     private final boolean isAdmin = false;
 
+    public User(@NonNull String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+
+    //Должен ли юзер хранить у себя список заказов? Скорее нет. Их можно запросить у order service по user_id
 }
