@@ -5,9 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.context.annotation.Lazy;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,8 +18,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long order_id;
     private long user_id;
-    @Embedded
-    @Lazy
-    private List<Long> products = new ArrayList<>();
+    private List<Long> products;
     private float invoice; //итого по заказу
 }

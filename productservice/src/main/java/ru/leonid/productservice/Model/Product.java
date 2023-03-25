@@ -4,9 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.springframework.context.annotation.Lazy;
-
-import java.util.ArrayList;
 import java.util.List;
 @Entity
 @Getter
@@ -28,9 +25,7 @@ public class Product {
     @NotNull
     private int amount; //кол-во
     private String discount; //скидочки
-    @Embedded
-    @Lazy
-    private List<Review> reviews = new ArrayList<>(); //встраиваемый обзор и оценка
+    private List<Review> reviews; //встраиваемый обзор и оценка
     private String keywords; //через запятую
     private String characteristics; //создать тип Characteristics(Param--value)
 

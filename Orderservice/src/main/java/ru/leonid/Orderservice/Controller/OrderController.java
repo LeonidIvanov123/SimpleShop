@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import ru.leonid.Orderservice.Service.OrderService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -18,11 +19,17 @@ public class OrderController {
 
     @GetMapping("/test")
     public String testMethod(){
+        List<Long> prods = new ArrayList<>();
+        prods.add(100L);
+        prods.add(50L);
+        prods.add(990L);
+        orderService.createNewOrder(prods, 1L);
         return "test service #Ordersrevice# " + instanceAplication;
     }
 
-    @GetMapping("/create")
-    public String createOrder(List<Long> products, Long user_id){
+    @GetMapping("/create/{products}/{user_id}")
+    public String createOrder(@PathVariable(name = "products")List<Long> products,
+                              @PathVariable(name = "user_id") Long user_id){
         return orderService.createNewOrder(products,user_id);
     }
 

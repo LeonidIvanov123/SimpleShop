@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  monitordb:
+    build:
+      context: .
+      dockerfile: dockerfilePGAdmin
+    ports:
+      - "9991:80"
+    networks:
+      - postgres
+
+  serverdb: #Это имя хоста - по нему подключаемся из pgAdmin
+    build:
+      context: .
+      dockerfile: dockerfilePostgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+#...и еще по контейнеру каждому сервису под разные порты:)
+
+networks:
+  postgres:
+    driver: bridge

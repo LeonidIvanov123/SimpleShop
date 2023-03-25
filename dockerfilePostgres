@@ -1,0 +1,5 @@
+FROM postgres:13-alpine
+EXPOSE 5432
+ENV TZ="Europe/Moscow"
+ENV POSTGRES_PASSWORD="testpwd"
+ENV POSTGRES_DB="OrderDB"
