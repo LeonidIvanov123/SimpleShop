@@ -2,6 +2,7 @@ version: "3.9"
 
 services:
   monitordb:
+    container_name: monitoringDB
     build:
       context: .
       dockerfile: dockerfilePGAdmin
@@ -11,6 +12,7 @@ services:
       - postgres
 
   serverdb: #Это имя хоста - по нему подключаемся из pgAdmin
+    container_name: ordedDB
     build:
       context: .
       dockerfile: dockerfilePostgres

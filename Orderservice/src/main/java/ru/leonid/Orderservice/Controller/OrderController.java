@@ -8,6 +8,13 @@ import ru.leonid.Orderservice.Service.OrderService;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * Если auth.enabled=true
+ * то все запросы к сервису
+ * обязаны содеражть заголовок Authorization, значение:
+ * "Holder + токен, выданный userservice(конечная точка user/token/{login}/{pass})
+ ***/
+
 @RestController
 @RequestMapping("/order")
 public class OrderController {

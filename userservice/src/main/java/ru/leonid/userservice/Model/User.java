@@ -19,13 +19,13 @@ public class User {
     @NotNull
     private String email;
     private long balance;
-    private String password;
+    private String passwordhash;
     private final boolean isAdmin = false;
 
-    public User(@NonNull String username, String email, String password) {
+    public User(@NonNull String username, String email, String passwordhash) {
         this.username = username;
         this.email = email;
-        this.password = password;
+        this.passwordhash = passwordhash;
     }
 
 

@@ -7,17 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="apiGateway" />
-        <module name="eureca-server" />
         <module name="Orderservice" />
-        <module name="notificationservice" />
         <module name="userservice" />
         <module name="productservice" />
+        <module name="apiGateway" />
+        <module name="eureca-server" />
+        <module name="notificationservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Accountservice" target="17" />
       <module name="apiGateway" target="17" />
+      <module name="authorizationservice" target="17" />
       <module name="eureca-server" target="17" />
       <module name="notificationservice" target="17" />
       <module name="Orderservice" target="17" />
@@ -30,6 +31,7 @@
       <module name="Accountservice" options="-parameters" />
       <module name="Orderservice" options="-parameters" />
       <module name="apiGateway" options="-parameters" />
+      <module name="authorizationservice" options="-parameters" />
       <module name="eureca-server" options="-parameters" />
       <module name="notificationservice" options="-parameters" />
       <module name="productservice" options="-parameters" />

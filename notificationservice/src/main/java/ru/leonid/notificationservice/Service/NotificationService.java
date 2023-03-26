@@ -21,6 +21,6 @@ public class NotificationService {
 
     public String getNotificationByUserId(long user_id){
         return notificationRepository.findNotificationsByUserId(user_id).stream().map(Objects::toString)
-                .reduce((t, u) -> t + "\n" + u).orElse("");
+                .reduce((t, u) -> t + "\n" + u).orElse("No notifications");
     }
 }
