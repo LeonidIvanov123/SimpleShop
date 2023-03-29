@@ -34,7 +34,7 @@ public class OrderController {
         return "test service #Ordersrevice# " + instanceAplication;
     }
 
-    @GetMapping("/create/{products}/{user_id}")
+    @PutMapping("/create/{products}/{user_id}")
     public String createOrder(@PathVariable(name = "products")List<Long> products,
                               @PathVariable(name = "user_id") Long user_id){
         return orderService.createNewOrder(products,user_id);

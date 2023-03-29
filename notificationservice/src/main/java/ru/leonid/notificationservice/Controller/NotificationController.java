@@ -2,10 +2,7 @@ package ru.leonid.notificationservice.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.leonid.notificationservice.Service.NotificationService;
 
 @RestController
@@ -23,7 +20,7 @@ public class NotificationController {
         return "test service #Notification# " + instanceAplication;
     }
 
-    @GetMapping("/send/{user_id}/{header}/{content}")
+    @PostMapping("/send/{user_id}/{header}/{content}")
     public String sendNotificatToUser(@PathVariable("user_id") long user_id,
                                       @PathVariable("header") String header,
                                       @PathVariable("content") String content){

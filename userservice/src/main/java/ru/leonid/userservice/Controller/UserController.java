@@ -22,7 +22,7 @@ public class UserController {
     TokenService tokenService;
 
     //registration
-    @GetMapping("/{username}/{email}/{password}")
+    @PostMapping("/{username}/{email}/{password}")
     public ResponseEntity<String> processRegistration(@PathVariable("username") String username,
                                                       @PathVariable("email") String email,
                                                       @PathVariable("password") String password) {
@@ -37,7 +37,7 @@ public class UserController {
         return tokenService.generateToken(username);
     }
 
-    @GetMapping("/upbalance/{user_id}/{balance}")
+    @PutMapping("/upbalance/{user_id}/{balance}")
     public ResponseEntity<String> topUpBalance(@PathVariable("user_id") long user_id,
                                                @PathVariable("balance") long balance) {
         return ResponseEntity.ok(userService.upBalance(user_id, balance));

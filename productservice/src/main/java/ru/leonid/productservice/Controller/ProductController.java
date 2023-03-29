@@ -3,6 +3,7 @@ package ru.leonid.productservice.Controller;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.leonid.productservice.Model.Product;
 import ru.leonid.productservice.Model.ProductRepository;
@@ -30,11 +31,11 @@ public class ProductController {
     }
     /////
 
-    @GetMapping("/add")
-    public Product addProduct(){ //@PathVariable Product product){ //нужна форма для заполнения для валидации полей
+    @PostMapping("/add")
+    public ResponseEntity<Product> addProduct(){ //@PathVariable Product product){ //нужна форма для заполнения для валидации полей
         Product product = new Product("Картоха", "Еда картошка", 1, 500);
         productService.addNewProduct(product);
-        return product;
+        return ResponseEntity.ok(product);
     }
     @GetMapping("/id/{productId}")
     public String getProduct(@PathVariable(name = "productId") Long product_id, @RequestParam(required = false) int amount){
